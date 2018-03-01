@@ -362,7 +362,7 @@ extension LocationPickerViewController: MKMapViewDelegate {
 		return pin
 	}
 	
-	func selectLocationButton() -> UIButton {
+	open  func selectLocationButton() -> UIButton {
 		let button = UIButton(frame: CGRect(x: 0, y: 0, width: 70, height: 30))
 		button.setTitle(selectButtonTitle, for: UIControlState())
         if let titleLabel = button.titleLabel {
