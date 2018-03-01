@@ -349,7 +349,7 @@ extension LocationPickerViewController {
 // MARK: MKMapViewDelegate
 
 extension LocationPickerViewController: MKMapViewDelegate {
-	public func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+	open func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
 		if annotation is MKUserLocation { return nil }
 		
 		let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "annotation")
@@ -401,7 +401,7 @@ extension LocationPickerViewController: UIGestureRecognizerDelegate {
 // MARK: UISearchBarDelegate
 
 extension LocationPickerViewController: UISearchBarDelegate {
-	public func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+	open func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
 		// dirty hack to show history when there is no text in search bar
 		// to be replaced later (hopefully)
 		if let text = searchBar.text, text.isEmpty {
@@ -409,7 +409,7 @@ extension LocationPickerViewController: UISearchBarDelegate {
 		}
 	}
 	
-	public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+	open func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 		// remove location if user presses clear or removes text
 		if searchText.isEmpty {
 			location = nil
